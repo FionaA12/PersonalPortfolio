@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/70b0a74fb4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <p class="logo"><span>My portfolio Website</span></p>
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <h1>Hi,I'm <span>Fiona</span><br><span>Caroline</span> Aranha</h1>
+            <p>B.E in AIML</span></p>
+        </div>
+    </div>
+</div>   
+<!------about------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Images/image(8).png" alt="Image">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About me</h1>
+                <p>I'm Fiona Caroline Aranha, a dedicated student currently pursuing a Bachelors degree in Artificial Intelligence and Machine Learning
+                at St.Joseph Engineering College, Mangalore. My journey in the field of technology is driven by a deep passion for innovation and a commitment to continuous growth. 
+                My ultimate ambition is to harness the boundless potential of technology to steer progress and shape the future,
+                 leaving a profound impact on the ever-evolving worlds of AI and web development.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Programming Languages</span><br>Java,Python,C</li>
+                        <li><span>Web Development</span><br>HTML,CSS</li>
+                        <li><span>Database Management</span><br>MqSQL</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Ongoing</span><br>BE in Artificial Intelligence and Machine Learning<br>St. Joseph Engineering College, Mangalore</li>
+                        <li><span>2021</span><br>Pre-University<br>Christ King Institution, Karkala</li>
+                        <li><span>2019</span><br>High School<br>Christ King Institution, Karkala</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------Portfolio------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="Images/IMG-20221028-WA0029.png" alt="Project image">
+                <div class="layer">
+                    <h3>SMART HELMET</h3>
+                    <p>This model is designed to elevate safety measures in accident situations. 
+                        It leverages state-of-the-art technology to send instant alert messages to nearby ambulances, family members,
+                         and authorities during emergencies. Notably, it functions as an Arduino-based accident notification system.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images/image (1).png" alt="Project image">
+                <div class="layer">
+                    <h3>DESIGN AND SIMULATION OF FUEL CELL TO GENERATE POWER USING MATLAB SIMULINK</h3>
+                    <p>This model showcases the potential of integrating alternative power generation methods.
+                    The simulation provides valuable insights into the system's energy efficiency, reliability, and redundancy,
+                    as well as its performance under variability. It serves as a powerful tool for advancing the development and 
+                    utilization of fuel cell technology in various domains, from clean energy generation to transportation and beyond.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----contact------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> 21a11.fiona@sjec.ac.in</p>
+                <p><i class="fa-solid fa-phone"></i> 8217731050</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/"><i class="fab fa-github"></i></a>
+                </div>
+                <a href="Images/CV Resume.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyjPX771aCGKXKn2K-0kx8PfL2HtWNJHsKUTzBIGYQRozVVaoEpTQMM7giY5f4ovpJ-/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
